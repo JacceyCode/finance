@@ -1,8 +1,8 @@
 ## Bank on The Go
 
-A finacial application that simulates banking and budgeting at a Go from one app.
+A financial application for managing finance and budget seamlessly from one app.
 
-It features the linking of multiple bank accounts into one secured app for financial transaction management, budget planning and tracking.
+It features the linking of multiple bank accounts into one secured app for transaction management, budget planning and tracking.
 
 ## Test
 
