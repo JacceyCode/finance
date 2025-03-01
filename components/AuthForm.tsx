@@ -66,8 +66,9 @@ const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
         if (response) router.push("/");
       }
     } catch (error: any) {
-      // console.error("Check error", error.message);
-      setError(error.message);
+      console.error("Auth error", error.message);
+      // setError(error.message);
+      setError("An unexpected error occurred. Please try again or signup.");
     } finally {
       setIsLoading(false);
     }
