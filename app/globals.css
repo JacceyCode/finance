@@ -93,7 +93,7 @@
   }
 
   .text-26 {
-    @apply text-[26px] leading-[32px];
+    @apply text-[20px] leading-[24px];
   }
 
   .text-30 {

@@ -19,6 +19,7 @@ const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
   const router = useRouter();
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const formSchema = AuthFormSchema(type);
 
@@ -33,6 +34,7 @@ const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
 
   // 2. Define a submit handler.
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    setError(null);
     setIsLoading(true);
     try {
       // sign up with appwrite & create a plaid token
@@ -63,8 +65,9 @@ const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
 
         if (response) router.push("/");
       }
-    } catch (error) {
-      console.log(error);
+    } catch (error: any) {
+      // console.error("Check error", error.message);
+      setError(error.message);
     } finally {
       setIsLoading(false);
     }
@@ -188,6 +191,7 @@ const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
               />
 
               <div className="flex flex-col gap-4">
+                <small className="text-red-400">{error}</small>
                 <Button type="submit" className="form-btn" disabled={isLoading}>
                   {isLoading ? (
                     <>

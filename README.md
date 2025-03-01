@@ -1,4 +1,4 @@
-## Bank on The Go
+## OneClick Finance
 
 A financial application for managing finance and budget seamlessly from one app.
 
