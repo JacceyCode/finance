@@ -86,7 +86,7 @@ const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
           />
 
           <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
-            Horizon
+            OneCilck
           </h1>
         </Link>
 
