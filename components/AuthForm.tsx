@@ -180,14 +180,18 @@ const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
               <CustomInput
                 name="email"
                 label="Email"
-                placeholder="Enter your email"
+                placeholder={`Enter your email ${
+                  type === "sign-in" ? " - (test-email: raph@test.com)" : ""
+                }`}
                 control={form.control}
               />
 
               <CustomInput
                 name="password"
                 label="Password"
-                placeholder="Enter your password"
+                placeholder={`Enter your password ${
+                  type === "sign-in" ? " - (test-pass: Raph@test)" : ""
+                }`}
                 control={form.control}
               />
 
